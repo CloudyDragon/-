@@ -1,30 +1,19 @@
-# myvue
+# 这是次元界的前端界面
 
-> A Vue.js project
+## 技术栈
+> vue2 + vuex + vue-router + webpack + ES6
+##功能介绍
+###主页
+>  ---只是一个界面（已完成）
+###图片
+>  ---输入关键字搜索角色的图片。
+###音乐
+>  ---拥有在线播放音乐功能
+###视频
+>  ---拥有在线播放视频功能
+##完成程度
+|主页|图片|音乐|视频|
+|:---|:---|:---|:---|
+|完成|界面完成80%功能0%|未开始|未开始|
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+效果展示在 [guide](http://www.suzumiya.club/vue/).
