@@ -1,19 +1,16 @@
 <template>
   <div id="photo-wrapper">
-    <SearchBox/>
     <router-view/>
   </div>
 </template>
 
 <script>
-import Img from '../components/photos/Img.vue'
-import SearchBox from '../components/photos/SearchBox.vue'
+import MyImg from '../components/photos/MyImg.vue'
 
 export default {
   name: 'photo',
   components: {
-    Img,
-    SearchBox
+    MyImg
   }
 }
 </script>

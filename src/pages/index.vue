@@ -2,8 +2,7 @@
   <div>
       <Menu/>
       <transition enter-active-class="animated slideInLeft"
-   leave-active-class="animated bounceOutUp"
->
+                  leave-active-class="animated bounceOutUp">
        <router-view/>
       </transition>
       <Segmenting/>

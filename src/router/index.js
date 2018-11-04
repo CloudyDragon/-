@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/index.vue'
-import Bg from '@/components/Bg.vue'
-
-import Photo from '@/pages/photo.vue'
-import Img from '@/components/photos/Img.vue'
-import ImgChild from '@/components/photos/ImgChild.vue'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history', //用于去除url后面的#
+  base: '/ciyuanjie/', //用于在前面加个基路径
+  linkActiveClass: 'active-link',
+  linkExactActiveClass: 'exact-active-link',
   routes: [
     {
       path: '/',
@@ -18,21 +17,21 @@ export default new Router({
         {
           path: '/',
           name: 'index',
-          component: Bg
+          component: () => import('@/components/Bg.vue')
         },
         {
           path: '/photo',
-          component: Photo,
+          component: () => import('@/pages/photo.vue'),
           children: [
             {
               path: '/photo',
-              name: 'img',
-              component: Img
+              name: 'myImg',
+              component: () => import('@/components/photos/MyImg.vue')
             },
             {
-              path: '/imgchild',
+              path: '/imgchild/:name',
               name: 'imgChild',
-              component: ImgChild
+              component: () => import('@/components/photos/ImgChild.vue')
             }
           ]
         }

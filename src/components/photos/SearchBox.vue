@@ -1,15 +1,34 @@
 <template>
   <div>
     <div id="search">
-      <input placeholder="你想找谁呢?" type="search"/>
-      <button>查询</button>
+      <input placeholder="你想找谁呢?" type="search" v-model="inp"/>
+      <button @click="initAjax">查询</button>
     </div>
   </div>
 </template>
 
 <script>
+import {
+  mapActions
+} from 'vuex'
+
 export default {
-  name: 'searchBox'
+  name: 'searchBox',
+  data() {
+    return {
+      inp: ''
+    }
+  },
+  methods: {
+    ...mapActions(['GETIMGLIST']),
+    initAjax() {
+      this.GETIMGLIST({
+        page_size: 6,
+        page_index: 1,
+        parameter: this.inp
+      })
+    }
+  }
 }
 </script>
 
