@@ -1,13 +1,12 @@
 <template>
   <div id="nav">
-    <transition enter-active-class="animated fadeIn"
-   leave-active-class="animated fadeOut"
->
-      <MenuChild v-show="menuShow"/>
-    </transition>
     <div class="menu-button" @click="test">
       <canvas id="mycanvas" width="50px" height="49px" style="background-color:white;"></canvas>
     </div>
+    <transition enter-active-class="animated fadeIn"
+                leave-active-class="animated fadeOut">
+      <MenuChild v-show="menuShow"/>
+    </transition>
   </div>
 </template>
 
@@ -55,31 +54,25 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-#nav {
+<style lang="stylus" scoped>
+#nav
+  display: flex;
+  flex-direction: row-reverse
   width: 100%;
   height: 50px;
   border-bottom: 1px solid rgba(255, 0, 0, .3);
-}
-.menu-button {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  z-index: 1000;
-  height: 50px;
-  width: 50px;
-  -moz-box-sizing:border-box; /* Firefox */
-  -webkit-box-sizing:border-box; /* Safari */
-  box-sizing:border-box;
-  cursor: pointer;
-}
-.menu-button span {
-  display: inline-block;
-  height: 50px;
-  line-height: 50px;
-}
-.menu-button #mycanvas {
-  display: block;
-  border-radius: 0%;
-}
+  .menu-button
+    display: block;
+    height: 50px;
+    width: 50px;
+    box-sizing:border-box;
+    cursor: pointer;
+    span
+      display: inline-block;
+      height: 50px;
+      line-height: 50px;
+    #mycanvas
+      display: block;
+      border-radius: 0%;
+
 </style>

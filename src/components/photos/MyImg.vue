@@ -74,6 +74,7 @@ export default {
 <style scoped>
 #img-wrapper {
   width: 1024px;
+  min-height: 600px;
   margin: 20px auto;
   background-color: rgba(176, 129, 150, 0.1);
   border-radius: 1%;

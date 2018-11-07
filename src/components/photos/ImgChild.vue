@@ -31,11 +31,11 @@ export default {
 }
 </script>
 
-<style scoped>
-#img-child-wrapper {
+<style lang="stylus" scoped>
+#img-child-wrapper
   width: 1024px;
+  min-height: 600px;
   margin: 20px auto;
   background-color: rgba(176, 129, 150, 0.1);
   border-radius: 1%;
-}
 </style>

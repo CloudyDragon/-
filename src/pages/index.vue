@@ -3,7 +3,7 @@
       <Menu/>
       <transition enter-active-class="animated slideInLeft"
                   leave-active-class="animated bounceOutUp">
-       <router-view/>
+        <router-view/>
       </transition>
       <Segmenting/>
       <div style="background-color: white">
