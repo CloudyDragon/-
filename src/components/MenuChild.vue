@@ -1,22 +1,22 @@
 <template>
   <div id="nav-left">
     <router-link class="nav-name"
-                :class="{ active: count == 1}"
-                :to="{path:'/'}"
+                :class="{ active: count == 1 }"
+                :to="{ path:'/' }"
                 @click.native="select(1)">主页</router-link>
     <router-link class="nav-name"
-                :class="{ active: count == 2}"
-                :to="{path:'/photo'}"
+                :class="{ active: count == 2 }"
+                :to="{ path:'/photo' }"
                 @click.native="select(2)">图片</router-link>
 
     <router-link class="nav-name"
-                :class="{ active: count == 3}"
-                :to="{path:'/'}"
+                :class="{ active: count == 3 }"
+                :to="{ path:'/' }"
                 @click.native="select(3)">音乐</router-link>
 
     <router-link class="nav-name"
-                :class="{ active: count == 4}"
-                :to="{path:'/'}"
+                :class="{ active: count == 4 }"
+                :to="{ path:'/' }"
                 @click.native="select(4)">视频</router-link>
   </div>
 </template>
@@ -24,9 +24,15 @@
 <script>
 export default {
   name: 'MenuChild',
+  props: ['num'],
   data () {
     return {
       count: 1
+    }
+  },
+  watch: {
+    num: function () {
+      this.count = this.num
     }
   },
   methods: {

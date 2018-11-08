@@ -2,7 +2,7 @@
   <div>
     <div id="search">
       <input placeholder="你想找谁呢?" type="search" v-model="inp"/>
-      <button @click="initAjax">查询</button>
+      <button @click="initAjax">搜索</button>
     </div>
   </div>
 </template>
@@ -14,19 +14,15 @@ import {
 
 export default {
   name: 'searchBox',
-  data() {
+  data () {
     return {
       inp: ''
     }
   },
   methods: {
     ...mapActions(['GETIMGLIST']),
-    initAjax() {
-      this.GETIMGLIST({
-        page_size: 6,
-        page_index: 1,
-        parameter: this.inp
-      })
+    initAjax () {
+      this.$emit('search', this.inp)
     }
   }
 }

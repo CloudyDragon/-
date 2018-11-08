@@ -5,7 +5,7 @@
     </div>
     <transition enter-active-class="animated fadeIn"
                 leave-active-class="animated fadeOut">
-      <MenuChild v-show="menuShow"/>
+      <MenuChild :num="count" v-show="menuShow"/>
     </transition>
   </div>
 </template>
@@ -16,6 +16,7 @@ import MenuChild from './MenuChild.vue'
 
 export default {
   name: 'Menu',
+  props: ['count'],
   data () {
     return {
       menuShow: true

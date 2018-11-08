@@ -16,14 +16,15 @@ import {
 } from 'vuex'
 export default {
   name: 'imgChild',
-  mounted() {
-    //console.log(this.$route)
+  mounted () {
     this.GETPICTURE({
-      keywords: this.$route.path.slice(10)
+      keywords: this.$route.query.name
     })
   },
   computed: {
-    ...mapState(['searchImgURL'])
+    ...mapState({
+      searchImgURL: state => state.picture.searchImgURL
+    })
   },
   methods: {
     ...mapActions(['GETPICTURE'])

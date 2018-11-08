@@ -9,7 +9,7 @@ export default {
   name: 'segmenting',
   data: function() {
     return {
-      mywidth: document.body.clientWidth
+      mywidth: 0
     }
   },
   mounted: function() {
@@ -20,7 +20,7 @@ export default {
     var waveHeight = 30
     //var colours = ['#f00', '#0f0', '#00f']
     var colours = ['#ff0', '#0ff', '#f0f', '#00f', '#f00']
-    this.mywidth = document.body.clientWidth
+    this.mywidth = document.body.clientWidth || document.documentElement.clientWidth
     var timer
 
     function init() {
@@ -135,14 +135,14 @@ export default {
     init()
     window.onresize = function windowResize () {
       // 通过捕获系统的onresize事件触发我们需要执行的事件
-      this.mywidth = document.body.clientWidth
+      this.mywidth = document.body.clientWidth || document.documentElement.clientWidth
       //控制分割条的高宽
       document.getElementById('canvas').style.width = this.mywidth + 'px'
       document.getElementById('canvas').style.height = 30 + 'px'
       clearInterval(timer)
       waves = []//初始化分隔条
       init()
-      console.log(window.innerWidth, document.body.clientWidth)
+      console.log(window.innerWidth, document.body.clientWidth, document.documentElement.clientWidth)
     }
   }
 }

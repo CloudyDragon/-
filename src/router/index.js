@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/index.vue'
+import photo from './photo.js'
 
 Vue.use(Router)
 
@@ -19,22 +20,7 @@ export default new Router({
           name: 'index',
           component: () => import('@/components/Bg.vue')
         },
-        {
-          path: '/photo',
-          component: () => import('@/pages/photo.vue'),
-          children: [
-            {
-              path: '/photo',
-              name: 'myImg',
-              component: () => import('@/components/photos/MyImg.vue')
-            },
-            {
-              path: '/imgchild/:name',
-              name: 'imgChild',
-              component: () => import('@/components/photos/ImgChild.vue')
-            }
-          ]
-        }
+        photo
       ]
     }
   ]

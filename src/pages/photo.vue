@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MyImg from '../components/photos/MyImg.vue'
+import MyImg from '@/components/photos/MyImg.vue'
 
 export default {
   name: 'photo',
@@ -14,8 +14,9 @@ export default {
   }
 }
 </script>
-<style scoped>
-#photo-wrapper {
+<style lang="stylus" scoped>
+#photo-wrapper
+  max-width: 1024px;
+  margin: 20px auto;
   background-color: black;
-}
 </style>

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import mybg from '../plugins/bg.js'
+import mybg from '@/plugins/bgCanvas.js'
 export default {
   name: 'bg',
   mounted: function() {

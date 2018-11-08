@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Menu/>
+      <Menu :count="count"/>
       <transition enter-active-class="animated slideInLeft"
                   leave-active-class="animated bounceOutUp">
         <router-view/>
@@ -21,11 +21,32 @@
 
 <script>
 import animate from 'animate.css'
-import Menu from '../components/Menu.vue'
-import Segmenting from '../components/Segmenting.vue'
+import Menu from '@/components/Menu.vue'
+import Segmenting from '@/components/Segmenting.vue'
 
 export default {
   name: 'photo',
+  data () {
+    return {
+      count: 1
+    }
+  },
+  updated() {
+    this.change()
+  },
+  methods: {
+    change () {
+      if (this.$route.path === '/') {
+        this.count = 1
+      } else if (this.$route.path === '/photo') {
+        this.count = 2
+      } else if (this.$route.path === '/music') {
+        this.count = 3
+      } else {
+        this.count = 4
+      }
+    }
+  },
   components: {
     Menu,
     Segmenting
